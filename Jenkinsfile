@@ -10,7 +10,7 @@ pipeline{
         stage('codecompile'){
             steps{
                 echo 'starting compiling'
-                sh 'mvn compile'
+                sh 'bash -c "mvn compile"'
             }
         }
         stage('codetesting'){
