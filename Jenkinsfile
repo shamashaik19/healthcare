@@ -35,7 +35,11 @@ pipeline{
          }
         stage('port expose'){
             steps{
+<<<<<<< HEAD
                 sh 'docker run -dt -p 2000:80 --name c000 myimg1'
+=======
+                sh 'docker run -dt -p 2000:8082 --name c000 myimg'
+>>>>>>> 4c01cec31453edd077525c94c1120f9aae8e15bd
             }
         }   
     }
