@@ -7,7 +7,7 @@ pipeline{
                  echo 'github url checkout'
             }
         }
-        stage('codecompile'){
+        stage('compile'){
             steps{
                 echo 'starting compiling'
                 sh 'bash -c "mvn compile"'
@@ -30,12 +30,12 @@ pipeline{
         }
         stage('run dockerfile'){
           steps{
-               sh 'docker build -t myimg .'
+               sh 'docker build -t myimg1 .'
            }
          }
         stage('port expose'){
             steps{
-                sh 'docker run -dt -p 2000:80 --name c000 myimg'
+                sh 'docker run -dt -p 2000:80 --name c000 myimg1'
             }
         }   
     }
